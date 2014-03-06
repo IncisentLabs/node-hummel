@@ -1,0 +1,17 @@
+{
+  "name": "hummel",
+  "version": "0.0.1",
+  "description": "Node.js webapp support modules for common operational bits.",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Larry Myers <larry@larrymyers.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "nomnom": "^1.6.2",
+    "bunyan": "^0.22.1",
+    "express": "^4.0.0-rc2"
+  }
+}

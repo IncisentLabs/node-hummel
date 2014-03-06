@@ -1,0 +1,14 @@
+{
+  "name": "hummel-example",
+  "version": "0.0.1",
+  "description": "Example express.js app using hummel.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Larry Myers <larry@larrymyers.com>",
+  "license": "ISC",
+  "dependencies": {
+    "hummel": "0.0.1"
+  }
+}

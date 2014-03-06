@@ -1,0 +1,11 @@
+{
+    "DEFAULT": {
+        "port": 8002,
+        "logging": {
+            "level": "error"
+        }
+    },
+    "DEV": {
+        "foo": "baz"
+    }
+}

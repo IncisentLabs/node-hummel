@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Larry Myers <larry@larrymyers.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "hummel": "0.0.1"
   }

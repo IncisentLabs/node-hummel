@@ -1,6 +1,12 @@
 var hummel = require('hummel'),
     opts = hummel.args.parse(),
-    settings = hummel.settings(opts.mode);
+    settings = hummel.settings(opts.environment);
 
-console.log(opts);
-console.log(settings);
+var app = hummel.createApp();
+
+app.get('/', function(req, res) {
+    res.set('Content-Type', 'application/json');
+    res.json(settings);
+});
+
+app.run();

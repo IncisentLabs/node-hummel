@@ -4,7 +4,7 @@
         "logging": {
             "level": "info",
             "type": "rotating-file",
-            "path": "server.log",
+            "path": "logs/server.log",
             "period": "1d",
             "count": 5
         }

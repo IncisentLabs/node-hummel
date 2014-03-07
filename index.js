@@ -4,6 +4,6 @@ module.exports = {
     },
 
     settings: require('./lib/settings'),
-    logging: require('./lib/logging'),
+    log: require('./lib/logging'),
     args: require('./lib/args')
 };

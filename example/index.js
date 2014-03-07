@@ -1,12 +1,12 @@
 var hummel = require('hummel'),
-    settings = hummel.settings();
+    log = hummel.log;
 
 var app = hummel.createApp();
 
 app.get('/', function(req, res) {
-    delete settings.logging;
-    res.set('Content-Type', 'application/json');
-    res.json(settings);
+    log.debug('It works!');
+
+    res.send('Hello World!');
 });
 
 app.run();

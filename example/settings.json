@@ -1,17 +1,12 @@
 {
     "DEFAULT": {
         "port": 8002,
-        "logsDir": "logs",
         "logging": {
-            "streams": [
-                {
-                    "level": "info",
-                    "type": "rotating-file",
-                    "path": "server.log",
-                    "period": "1d",
-                    "count": 5
-                }
-            ]
+            "level": "info",
+            "type": "rotating-file",
+            "path": "server.log",
+            "period": "1d",
+            "count": 5
         }
     },
     "DEV": {

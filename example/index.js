@@ -1,7 +1,14 @@
 var hummel = require('hummel'),
-    log = hummel.log;
+    opts = require('nomnom')
+        .options(hummel.defaultOptions)
+        .option('foo', {
+            default: 'bar',
+            help: 'foo help'
+        })
+        .parse();
 
-var app = hummel.createApp();
+var app = hummel.createApp(opts),
+    log = hummel.getLogger();
 
 app.get('/', function(req, res) {
     log.debug('It works!');

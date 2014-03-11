@@ -4,7 +4,7 @@
   "description": "Node.js webapp support modules for common operational bits.",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt nodeunit"
   },
   "author": "Larry Myers <larry@larrymyers.com>",
   "license": "MIT",
@@ -14,5 +14,9 @@
     "bunyan": "^0.22.1",
     "express": "^3.4.7",
     "mkdirp": "^0.3.5"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.3",
+    "grunt-contrib-nodeunit": "^0.3.2"
   }
 }

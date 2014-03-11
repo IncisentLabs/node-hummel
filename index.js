@@ -26,7 +26,7 @@ var logging = require('./lib/logging'),
 
 module.exports = {
     createApp: function(opts) {
-        var envSettings = settings(opts.environment);
+        var envSettings = settings.fromEnv(opts.environment);
         var logger = logging(envSettings);
 
         return require('./lib/app')(opts, logger, envSettings);
@@ -37,7 +37,7 @@ module.exports = {
     },
 
     getSettings: function() {
-        return settings();
+        return settings.fromEnv();
     },
 
     defaultOptions: defaultOptions,

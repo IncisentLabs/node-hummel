@@ -1,8 +1,11 @@
 var defaultOptions = {
     environment: {
         abbr: 'e',
-        default: 'DEV',
-        help: "runtime mode the for application"
+        default: process.env.NODE_ENV,
+        callback: function(env) {
+            process.env.NODE_ENV = env;
+        },
+        help: "runtime mode the for application, overrides NODE_ENV"
     },
 
     workers: {
@@ -18,23 +21,26 @@ var defaultOptions = {
     }
 };
 
-var logger, settings;
+var logging = require('./lib/logging'),
+    settings = require('./lib/settings');
 
 module.exports = {
     createApp: function(opts) {
-        settings = require('./lib/settings')(opts.environment);
-        logger = require('./lib/logging')(settings);
+        var envSettings = settings(opts.environment);
+        var logger = logging(envSettings);
 
-        return require('./lib/app')(opts, logger, settings);
+        return require('./lib/app')(opts, logger, envSettings);
     },
 
     getLogger: function() {
-        return logger;
+        return logging();
     },
 
     getSettings: function() {
-        return settings;
+        return settings();
     },
 
-    defaultOptions: defaultOptions
+    defaultOptions: defaultOptions,
+    settings: settings,
+    logging: logging
 };

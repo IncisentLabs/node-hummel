@@ -2,7 +2,8 @@
 
 Hummel is a collection of sane defaults for command line arg parsing, logging, settings configuration
 for an Express.js application. These are bundled together to provide a prewired app to take the
-repetitive legwork out of productionalizing an Express.js web app.
+repetitive legwork out of creating an Express.js web app that can be deployed in a production
+environment.
 
 "The Hummel was designed in 1942 out of a need for mobile artillery support for the tank forces,
 the lack of which had first been felt during the invasion of the USSR."

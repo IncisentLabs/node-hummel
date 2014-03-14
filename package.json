@@ -1,7 +1,7 @@
 {
   "name": "hummel",
-  "version": "0.0.1",
-  "description": "Node.js webapp support modules for common operational bits.",
+  "version": "0.1.0",
+  "description": "Basic settings, logging, and cluster modules for quickly bootstrapping a web app.",
   "main": "index.js",
   "scripts": {
     "test": "grunt nodeunit"

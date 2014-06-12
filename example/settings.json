@@ -3,10 +3,7 @@
         "port": 8002,
         "logging": {
             "level": "info",
-            "type": "rotating-file",
-            "path": "logs/server.log",
-            "period": "1d",
-            "count": 5
+            "path": "logs/server.log"
         }
     },
     "DEV": {

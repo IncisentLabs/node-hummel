@@ -1,6 +1,6 @@
 {
   "name": "hummel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Basic settings, logging, and cluster modules for quickly bootstrapping a web app.",
   "main": "index.js",
   "files": [
@@ -16,11 +16,11 @@
   "author": "Larry Myers <larry@larrymyers.com>",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^2.4.1",
-    "nomnom": "^1.6.2",
     "bunyan": "^0.22.1",
-    "express": "^3.4.7",
-    "mkdirp": "^0.3.5"
+    "express": "^4.4.3",
+    "lodash": "^2.4.1",
+    "mkdirp": "^0.3.5",
+    "nomnom": "^1.6.2"
   },
   "devDependencies": {
     "grunt": "^0.4.3",

@@ -11,7 +11,7 @@
     "registry": "http://incisentlabs.artifactoryonline.com/incisentlabs/api/npm/npm-local"
   },
   "scripts": {
-    "test": "grunt nodeunit"
+    "test": "grunt nodeunit:console"
   },
   "author": "Larry Myers <larry@larrymyers.com>",
   "license": "MIT",

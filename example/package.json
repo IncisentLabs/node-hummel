@@ -9,6 +9,7 @@
   "author": "Larry Myers <larry@larrymyers.com>",
   "license": "MIT",
   "dependencies": {
-    "hummel": "*"
+    "hummel": "*",
+    "nomnom": "^1.8.0"
   }
 }

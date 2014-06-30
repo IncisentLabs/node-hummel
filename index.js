@@ -26,28 +26,32 @@ var defaultOptions = {
     }
 };
 
-var logging = require('./lib/logging'),
+var _ = require('lodash'),
+    logging = require('./lib/logging'),
     settings = require('./lib/settings'),
-    parsedOptions = require('nomnom').options(defaultOptions).parse(),
-    logger;
+    parsedOptions;
+
+var getDefaultOpts = _.once(function() {
+    return require('nomnom').options(defaultOptions).parse();
+});
 
 module.exports = {
     createApp: function(opts) {
-        if (!opts) opts = parsedOptions;
+        if (!opts) opts = getDefaultOpts();
         parsedOptions = opts;
 
         return require('./lib/app')(opts, this.getLogger(), this.getSettings());
     },
 
     getLogger: function(opts) {
-        if (!opts) opts = parsedOptions;
+        if (!opts) opts = getDefaultOpts();
         parsedOptions = opts;
 
         return logging(this.getSettings(), parsedOptions);
     },
 
     getSettings: function(opts) {
-        if (!opts) opts = parsedOptions;
+        if (!opts) opts = getDefaultOpts();
         parsedOptions = opts;
 
         return settings.fromEnv(parsedOptions.environment);

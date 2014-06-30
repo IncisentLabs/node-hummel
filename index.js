@@ -1,7 +1,7 @@
 var defaultOptions = {
     environment: {
         abbr: 'e',
-        default: process.env.NODE_ENV,
+        default: process.env.NODE_ENV || 'DEV',
         callback: function(env) {
             process.env.NODE_ENV = env;
         },
@@ -18,35 +18,40 @@ var defaultOptions = {
         abbr: 'p',
         default: 8000,
         help: 'port to run on'
+    },
+
+    logs: {
+        'abbr': 'l',
+        'help': 'file path to write log messages (overrides settings.json)'
     }
 };
 
 var logging = require('./lib/logging'),
-    settings = require('./lib/settings');
+    settings = require('./lib/settings'),
+    parsedOptions = require('nomnom').options(defaultOptions).parse(),
+    logger;
 
 module.exports = {
     createApp: function(opts) {
-        if (!opts) opts = this.getOptions().parse();
+        if (!opts) opts = parsedOptions;
+        parsedOptions = opts;
 
-        var envSettings = settings.fromEnv(opts.environment);
-        var logger = logging(envSettings);
-
-        return require('./lib/app')(opts, logger, envSettings);
+        return require('./lib/app')(opts, this.getLogger(), this.getSettings());
     },
 
-    getLogger: function() {
-        return logging();
+    getLogger: function(opts) {
+        if (!opts) opts = parsedOptions;
+        parsedOptions = opts;
+
+        return logging(this.getSettings(), parsedOptions);
     },
 
-    getSettings: function() {
-        return settings.fromEnv();
+    getSettings: function(opts) {
+        if (!opts) opts = parsedOptions;
+        parsedOptions = opts;
+
+        return settings.fromEnv(parsedOptions.environment);
     },
 
-    getOptions: function() {
-        return require('nomnom').options(defaultOptions);
-    },
-
-    defaultOptions: defaultOptions,
-    settings: settings,
-    logging: logging
+    defaultOptions: defaultOptions
 };

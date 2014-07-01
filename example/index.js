@@ -9,6 +9,4 @@ app.get('/', function(req, res) {
     res.send('Hello World!');
 });
 
-log.info('NODE_ENV=' + process.env.NODE_ENV);
-
 app.run();

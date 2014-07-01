@@ -6,4 +6,6 @@ var hummel = require('hummel'),
         })
         .parse();
 
-console.log(JSON.stringify(opts, null, 4));
+var log = hummel.getLogger();
+
+log.debug(opts);

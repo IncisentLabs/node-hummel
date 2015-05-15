@@ -1,6 +1,6 @@
 {
   "name": "hummel",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "description": "Basic settings, logging, and cluster modules for quickly bootstrapping a web app.",
   "main": "index.js",
   "files": [
@@ -28,6 +28,6 @@
   },
   "readme": "# hummel\n\nHummel is a collection of sane defaults for command line arg parsing, logging, settings configuration\nfor a node application.\n\nTo integrate with a web application use one of the sub-projects, which will pre-wire the application.\n\n\"The Hummel was designed in 1942 out of a need for mobile artillery support for the tank forces,\nthe lack of which had first been felt during the invasion of the USSR.\"\n\n## Setup\n\n    npm install hummel --save\n\n## Usage\n\nSee example for settings.json format and test-script.\n",
   "readmeFilename": "README.md",
-  "_id": "hummel@0.6.0",
-  "_from": "hummel@"
+  "_id": "hummel@0.5.0",
+  "_from": "hummel@0.5.0"
 }

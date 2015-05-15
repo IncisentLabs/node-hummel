@@ -1,23 +1,17 @@
-# node-hummel
+# hummel
 
 Hummel is a collection of sane defaults for command line arg parsing, logging, settings configuration
-for an Express.js application. These are bundled together to provide a prewired app to take the
-repetitive legwork out of creating an Express.js web app that can be deployed in a production
-environment.
+for a node application.
+
+To integrate with a web application use one of the sub-projects, which will pre-wire the application.
 
 "The Hummel was designed in 1942 out of a need for mobile artillery support for the tank forces,
 the lack of which had first been felt during the invasion of the USSR."
 
 ## Setup
 
-    npm install
+    npm install hummel --save
 
-## Running the Example
+## Usage
 
-    cd example
-    node index.js --environment=DEV
-
-## How to Use in an Express.js Project
-
-Refer to example/index.js to see how to have hummel create a prewired Express.js app to use
-as a starting point for an application.
+See example for settings.json format and test-script.

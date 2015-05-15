@@ -27,7 +27,6 @@ var defaultOptions = {
 };
 
 var _ = require('lodash'),
-    app = require('./lib/app'),
     logging = require('./lib/logging'),
     settings = require('./lib/settings');
 
@@ -36,11 +35,6 @@ var getDefaultOpts = _.once(function(opts) {
 });
 
 module.exports = {
-    createApp: function(opts) {
-        opts = _.defaults(opts || {}, getDefaultOpts(opts));
-
-        return app(opts, this.getLogger(), this.getSettings());
-    },
 
     getLogger: function(opts) {
         opts = _.defaults(opts || {}, getDefaultOpts(opts));
@@ -52,6 +46,10 @@ module.exports = {
         opts = _.defaults(opts || {}, getDefaultOpts(opts));
 
         return settings.fromEnv(opts.environment);
+    },
+
+    getOptions: function(opts) {
+        return _.defaults(opts || {}, getDefaultOpts(opts));
     },
 
     defaultOptions: defaultOptions

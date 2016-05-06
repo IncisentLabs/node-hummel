@@ -1,6 +1,6 @@
 {
   "name": "hummel",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Basic settings, logging, and cluster modules for quickly bootstrapping a web app.",
   "main": "index.js",
   "files": [

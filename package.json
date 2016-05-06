@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bunyan": "^0.22.1",
+    "bunyan": "1.8.1",
     "bunyan-syslog": "^0.3.0",
     "lodash": "^2.4.1",
     "mkdirp": "^0.3.5",

@@ -8,7 +8,7 @@
     "index.js"
   ],
   "publishConfig": {
-    "registry": "https://copilot.jfrog.io/copilot/api/npm/copilot-npm"
+    "registry": "https://copilot.jfrog.io/copilot/api/npm/copilot-node"
   },
   "scripts": {
     "test": "grunt nodeunit:console"
